@@ -34,6 +34,13 @@
         .td_links_width {
             width: 500px;
         }
+
+        .result_frame {
+            margin: 10px auto;
+            width: 100%;
+            height: 800px;
+            scroll
+        }
     </style>
 </head>
 
@@ -53,48 +60,66 @@
                     <td>6</td>
                     <td>2025-07-23 수요일</td>
                     <td>
-                        <a href="./work/day06_20250723/ch08_level_margin.html" target="_blank">ch08_level_margin</a><br>
-                        <a href="./work/day06_20250723/ch08_layout.html" target="_blank">ch08_layout</a><br>
-                        <a href="./work/day06_20250723/ch08_positionn.html" target="_blank">ch08_position</a>
+                        <a href="./work/day06_20250723/ch08_level_margin.html" target="_blank">block, inline 레벨과 마진
+                            (새창)</a>
+                        |
+                        <a href="./work/day06_20250723/ch08_level_margin.html" target="resultFrame">iframe에서 확인</a>
+                        <br>
+                        <a href="./work/day06_20250723/ch08_layout.html" target="_blank">웹 문서 레이아웃 (새창)</a> |
+                        <a href="./work/day06_20250723/ch08_layout.html" target="resultFrame">iframe에서 확인</a>
+                        <br>
+                        <a href="./work/day06_20250723/ch08_position.html" target="_blank">웹 요소 위치 지정 (새창)</a> |
+                        <a href="./work/day06_20250723/ch08_position.html" target="resultFrame">iframe에서 확인</a>
                     </td>
                 </tr>
                 <tr>
                     <td>5</td>
                     <td>2025-07-22 화요일</td>
                     <td>
-                        <a href="./work/day05_20250722/css_selector.html" target="_blank">CSS Selector</a>
+                        <a href="./work/day05_20250722/css_selector.html" target="_blank">CSS Selector (새창)</a> |
+                        <a href="./work/day05_20250722/css_selector.html" target="resultFrame">iframe에서 확인</a>
                     </td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>2025-07-21 월요일</td>
                     <td>
-                        <a href="./work/day04_20250721/apply_fe.html" target="_blank">프런트엔드 개발자 지원하기</a>
+                        <a href="./work/day04_20250721/apply_fe.html" target="_blank">프런트엔드 개발자 지원하기 (새창)</a> |
+                        <a href="./work/day04_20250721/apply_fe.html" target="resultFrame">iframe에서 확인</a>
                     </td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>2025-07-18 금요일</td>
                     <td>
-                        <a href="./work/day03_20250718/hiring.html" target="_blank">수습 국원 모집</a>
+                        <a href="./work/day03_20250718/hiring.html" target="_blank">수습 국원 모집</a> |
+                        <a href="./work/day03_20250718/hiring.html" target="resultFrame">iframe에서 확인</a>
                     </td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>2025-07-17 목요일</td>
                     <td>
-                        <a href="./work/day02_20250717/index_myself.html" target="_blank">소개</a>
+                        <a href="./work/day02_20250717/index_myself.html" target="_blank">소개</a> |
+                        <a href="./work/day02_20250717/index_myself.html" target="resultFrame">iframe에서 확인</a>
                     </td>
                 </tr>
                 <tr>
                     <td>1</td>
                     <td>2025-07-16 수요일</td>
                     <td>
-                        <a href="./work/day01_20250716/index6.html" target="_blank">Semantic 태그로 페이지 채우기</a>
+                        <a href="./work/day01_20250716/index6.html" target="_blank">Semantic 태그로 페이지 채우기</a> |
+                        <a href="./work/day01_20250716/index6.html" target="resultFrame">iframe에서 확인</a>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <!-- 링크 결과를 iframe에 표시한다 -->
+    <div class="result">
+        <h3>과제 링크에서 "iframe에서 확인"을 클릭하면, 아래의 영역에 과제가 바로 표시됩니다.</h3>
+        <iframe class="result_frame" name="resultFrame" src="about:blank"></iframe>
     </div>
 </body>
 
