@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector</title>
+
+    <style>
+        /* 구글 웹폰트 링크 */
+        @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Dodum&display=swap');
+
+        .intro {
+            background-color: beige;
+            border: 1px solid red;
+        }
+
+        #Lastname {
+            background-color: rgb(240, 240, 45);
+            border: 1px dotted rgb(51, 51, 2);
+        }
+
+        p {
+            font-family: "Do Hyeon", sans-serif;
+            font-weight: 300;
+            font-size: 1.5em;
+            font-style: normal;
+        }
+
+        ul+p {
+            background-color: blue;
+        }
+
+        [id] {
+            background-color: aquamarine;
+        }
+
+        [id=my_Address] {
+            border: 1px double rgb(19, 46, 70);
+        }
+
+        /* beautiful 텍스트를 포함하고 있는 title을 select한다 */
+        [title*=beautiful] {
+            border: 1px dashed rgb(7, 110, 76);
+        }
+
+        /* beautiful와 정확하게 일치하는 단어가 포함된 title을 select한다. beaufituls는 선택 안함 */
+        [title~=beautiful] {
+            border: 1px solid rgb(4, 255, 171);
+        }
+
+        table {
+            caption-side: top;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: rgb(236, 191, 234);
+        }
+
+        .gowun-dodum-regular {
+            font-family: "Gowun Dodum", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        /* text-shadow 가로 거리, 세로 거리, 번짐 정도, 색상 */
+        .shadow1 {
+            color: red;
+            text-shadow: 1px 1px black;
+        }
+
+        .shadow2 {
+            text-shadow: 5px 5px #FFA500
+        }
+
+        .shadow3 {
+            color: #fff;
+            text-shadow: 7px -7px 20px #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to my homepage!</h1>
+
+    <div class="intro">
+        <p>My name is Jake <span id="Lastname">Lee</span></p>
+        <p id="my_Address">I live in Giheung</p>
+        <p>I have many hobbies.</p>
+    </div>
+
+    <ul id="Listhobbys">
+        <li>Golf</li>
+        <li>Weight training</li>
+        <li>Bike</li>
+        <li>Climbing</li>
+    </ul>
+
+    <p class="myquote">
+        All my hobbys are interesting! <br>
+        But I really like Golf!
+    </p>
+
+    <p lang="it" title="Hello beautiful">Ciao golf</p>
+    <p lang="it" title="Hello beautifuls">Ciao golfs</p>
+
+
+    <h3>We are all animals!</h3>
+
+    <p><b>My latest discoveries have led me to believe that we are all animals:</b></p>
+    <table class="gowun-dodum-regular">
+        <caption>&lt;속성 선택자 7가지&gt;</caption>
+        <thead>
+            <tr>
+                <td>선택자</td>
+                <td>선택 요소</td>
+                <td>예시</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>[속성]</td>
+                <td>해당 속성이 있는 요소</td>
+                <td>[required]</td>
+            </tr>
+            <tr>
+                <td>[속성 = 값]</td>
+                <td>지정한 속성값이 있는 속성</td>
+                <td>[target = _blank]</td>
+            </tr>
+            <tr>
+                <td>[속성 ~= 값]</td>
+                <td>지정한 속성값이 포함된 요소 (단어별)</td>
+                <td>[class ~= button]</td>
+            </tr>
+            <tr>
+                <td>[속성 |= 값]</td>
+                <td>지정한 속성값이 포함된 요소 (단어별, 하이픈 포함)</td>
+                <td>[title |= us]</td>
+            </tr>
+            <tr>
+                <td>[속성 ^= 값]</td>
+                <td>지정한 속성값으로 시작하는 요소</td>
+                <td>[title ^= eng]</td>
+            </tr>
+            <tr>
+                <td>[속성 $= 값]</td>
+                <td>지정한 속성값으로 끝나는 요소</td>
+                <td>[href $= xls]</td>
+            </tr>
+            <tr>
+                <td>[속성 *= 값]</td>
+                <td>지정한 속성값의 일부가 일치하는 요소</td>
+                <td>[href *= w3]</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h2 class="shadow1">SHADOW ONE</h2>
+    <h2 class="shadow2">SHADOW TWO</h2>
+    <h2 class="shadow3">SHADOW THREE</h2>
+</body>
+
+</html>

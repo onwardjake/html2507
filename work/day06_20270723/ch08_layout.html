@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 문서 레이아웃</title>
+
+    <style>
+        img {
+            float: right;
+            margin-left: 40px;
+        }
+
+        .wrapper {
+            width: 500px;
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .box_common {
+            padding: 100px 20px;
+            margin: 10px;
+        }
+
+        .box1 {
+            background: #ffd800;
+            float: left;
+            margin-right: 30px;
+        }
+
+        .box2 {
+            background: #0094ff;
+            float: right;
+            margin-left: 30px;
+        }
+
+        .clear_float {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Ex et adipisicing voluptate aliqua cupidatat nulla. Laboris est sint sit aliqua enim. Aute Lorem eu sint aute
+        sunt
+        proident. Do culpa consectetur elit duis laboris reprehenderit incididunt nulla. Irure exercitation tempor
+        aliqua
+        laboris cupidatat anim in non officia aliquip excepteur fugiat labore.</p>
+    <img src="images/tree.png">
+    <p>Lorem ipsum reprehenderit adipisicing exercitation enim velit veniam incididunt sit consectetur elit
+        exercitation.
+        Commodo veniam sit quis nisi ea. Ipsum do aliqua nostrud laboris elit duis adipisicing id Lorem qui. Labore
+        dolor
+        ipsum enim incididunt. Velit qui cillum sunt labore incididunt duis aute Lorem nulla et. Sint commodo aute amet
+        laboris ullamco exercitation Lorem dolore veniam ut reprehenderit incididunt. Laborum nulla eiusmod cillum irure
+        anim aute.</p>
+    <p>Excepteur voluptate ad irure ipsum duis. Deserunt cupidatat commodo proident eu mollit cillum commodo quis quis
+        et
+        ad. Incididunt adipisicing enim laboris voluptate.</p>
+
+
+
+    <div class="wrapper">
+        <div class="box_common box1">박스 1</div>
+        <div class="box_common box2">박스 2</div>
+        <p>Excepteur voluptate ad irure ipsum duis. Deserunt cupidatat commodo proident eu mollit cillum commodo quis
+            quis etad. Incididunt adipisicing enim laboris voluptate.</p>
+        <p class="clear_float">Excepteur voluptate ad irure ipsum duis. Deserunt cupidatat commodo proident eu mollit
+            cillum commodo quis
+            quis etad. Incididunt adipisicing enim laboris voluptate.</p>
+    </div>
+</body>
+
+</html>

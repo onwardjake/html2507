@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문하기</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>회원 가입</legend>
+            <label for="user_id">아이디 <small>(6자 이상)</small></label>
+            <input type="text" id="user_id" value="please input the ID">
+            <br>
+            <label for="search_info">검색</label>
+            <input type="search" id="search_info">
+            <br>
+            <label for="range">슬라이드</label>
+            <input type="range" id="range" min="0" max="100" step="1" value="20"
+                oninput="document.getElementById('selected_value').innerText=this.value">
+            <span id="selected_value">20</span>
+            <br>
+            <label for="email">E mail</label>
+            <input type="email" id="email">
+        </fieldset>
+        <fieldset>
+            <legend>상품 선택</legend>
+            <p><b>주문할 상품을 선택해 주세요.</b></p>
+            <ul>
+                <li>
+                    <label><input type="checkbox" name="prod" value="gift_3kg" checked>선물용 3kg</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="prod" value="gift_5kg">선물용 5kg</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="prod" value="family_3kg">가정용 3kg</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="prod" value="family_5kg">가정용 5kg</label>
+                </li>
+            </ul>
+            <p><b>포장 선택</b></p>
+            <ul>
+                <li><label><input type="radio" name="gift" value="yes" checked>선물 포장</label></li>
+                <li><label><input type="radio" name="gift" value="no">선물 포장 안함</label></li>
+            </ul>
+            <p><b>희망 배송일</b></p>
+            <input type="date" min="2025-07-21">
+            <input type="month">
+            <input type="week">
+            <p><b>희망 배송 시간</b></p>
+            <input type="time">
+            <input type="datetime-local">
+        </fieldset>
+        <fieldset>
+            <legend>배송 정보</legend>
+            <ul>
+                <li>
+                    <label for="user_name">이름</label>
+                    <input type="text" name="user_name" id="user_name">
+                </li>
+                <li>
+                    <label for="addr">배송 주소</label>
+                    <input type="text" name="addr" id="addr">
+                </li>
+                <li>
+                    <label for="mail">이메일</label>
+                    <input type="email" id="mail">
+                </li>
+                <li>
+                    <label for="phone">연락처</label>
+                    <input type="tel" id="phone">
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>제이크 소개</title>
+		<link rel="stylesheet" href="./css/mystyle.css" />
+		<style>
+			h1 {
+				font-family: 'Lucida Sans', 'Lucida Sans Regular',
+					'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+					sans-serif;
+				font-weight: 700;
+				font-size: 40px;
+				color: blueviolet;
+				text-shadow: 0 -1px #300126;
+			}
+
+			.detail {
+				font-size: 15px;
+				padding-left: 10px;
+			}
+
+			#home {
+				color: burlywood;
+			}
+
+			#home p {
+				padding-left: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<!-- h1은 element selector를 이용하여 폰트, 색상 등을 지정함 -->
+			<h1>About Jake Lee</h1>
+		</header>
+		<hr />
+		<section>
+			<h2>자기 소개</h2>
+			<!-- 자기 소개의 div는 detail class를 적용하여 스타일을 적용합니다. -->
+			<div class="detail">
+				<p>
+					제이크는 연세IT 교육에 참가하여 프런트엔드와 백엔드를
+					공부하여 풀스택 개발을 하는 교육생입니다.
+				</p>
+			</div>
+		</section>
+		<hr />
+		<section id="home">
+			<!-- 사는 곳의 section은 home id를 적용하여 스타일을 적용합니다. -->
+			<h2>사는 곳</h2>
+			<p>
+				경기도 용인시 기흥구에 살고 있으며, 집에서 연세IT 교육원까지는
+				약 50분 정도 걸립니다
+			</p>
+		</section>
+		<hr />
+		<section>
+			<h2 style="color: red">취미</h2>
+			<p>등산, 자전거, 골프를 취미로 하고 있습니다.</p>
+		</section>
+		<section>
+			<h2 class="h2Border">앞으로의 포부</h2>
+			<p id="h2Selector">
+				가르쳐주시는 것들을 잘 엮고 활용해서 나만의 서비스를 만들고
+				싶습니다.
+			</p>
+			<p>벌써 금요일이 왔네요!</p>
+		</section>
+	</body>
+</html>

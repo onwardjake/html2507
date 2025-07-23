@@ -1,0 +1,16 @@
+* {
+    background-color: #ccc;
+    text-align: center;
+}
+
+.desc{
+    
+}
+
+.desc *{
+    text-align: left;
+}
+
+.desc em{
+    color:coral;
+}

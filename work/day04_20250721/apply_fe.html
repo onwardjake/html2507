@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개발자 지원서</title>
+    <!-- 파비콘 설정 -->
+    <link rel="shortcut icon" href="./icon/apply_fe.svg" type="image/x-icon">
+    <!-- 스타일 정의 -->
+    <style>
+        form {
+            background-color: #eee;
+        }
+
+        .apply_form ul {
+            list-style-type: none;
+        }
+
+        .apply_form li {
+            padding: 5px;
+        }
+
+        .title_input label {
+            width: 100px;
+            float: left;
+        }
+
+        .input_box {
+            width: 300px;
+            border: 2px solid #555;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+
+        <form action="#">
+            <fieldset>
+                <!-- 개발자 지원서 상단의 안내 내용 섹션 -->
+                <section class="intro">
+                    <h1>프런트엔드 개발자 지원서</h1>
+                    <p>HTML, CSS, 자바스크립트의 기술을 이해하고 실무 경험이 있는 분을 찾습니다.</p>
+                    <hr>
+                </section>
+
+                <!-- 지원서 입력 양식 -->
+                <section class="apply_form">
+                    <!-- 개인정보 -->
+                    <p><b>개인 정보</b></p>
+                    <ul class="title_input">
+                        <li>
+                            <label for="app_name">이름</label>
+                            <input class="input_box" type="text" id="app_name" name="app_name" required autofocus
+                                placeholder="공백없이 입력하세요.">
+                        </li>
+                        <li>
+                            <label for="phone">연락처</label>
+                            <input type="tel" class="input_box" id="phone" name="phone" required>
+                        </li>
+                    </ul>
+
+                    <!-- 지원 분야 -->
+                    <p><b>지원 분야</b></p>
+                    <ul>
+                        <li>
+                            <input type="radio" id="div_publishing" name="app_division" value="div_publishing" checked>
+                            <label for="div_publishing">웹 퍼블리싱</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="div_webapp" name="app_division" value="div_webapp">
+                            <label for="div_webapp">웹 애플리케이션 개발</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="div_env" name="app_env" value="div_env">
+                            <label for="div_env">개발 환경 개선</label>
+                        </li>
+                    </ul>
+
+                    <!-- 지원 동기 -->
+                    <p><b>지원 동기</b></p>
+                    <textarea class="input_box" name="reason_for_app" rows="5" cols="60"
+                        placeholder="본사 지원 동기를 간략히 써 주세요."></textarea>
+                </section>
+
+                <!-- 접수 및 리셋 버튼 -->
+                <div>
+                    <input type="submit" value="접수하기">
+                    <input type="reset" value="다시 쓰기">
+                </div>
+            </fieldset>
+        </form>
+    </main>
+</body>
+
+</html>

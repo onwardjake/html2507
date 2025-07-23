@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(229, 230, 176);
+}
+
+
+p{
+    color: rgb(90, 34, 34);
+}
+
+#h2Selector{
+    color:blueviolet;
+}
+
+.h2Border{
+    border:1px solid red;
+    padding-left: 10px;
+}

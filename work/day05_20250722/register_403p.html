@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Align the label in a form</title>
+    <style>
+        #signup label {
+            float: left;
+            font-size: 13px;
+            width: 110px;
+        }
+
+        #signup input[type=text],
+        input[type=email],
+        input[type=tel],
+        input[type=password] {
+            border: 1px solid black;
+            border-radius: 3px;
+            width: 200px;
+        }
+
+        #signup input[required] {
+            border: 1px solid red;
+        }
+
+        #signup input[readonly] {
+            border: none;
+        }
+
+        ul {
+            list-style-position: outside;
+        }
+
+        ul.inside {
+            list-style-position: inside;
+        }
+
+
+        li {
+            list-style-type: none;
+            margin: 10px 5px;
+        }
+
+        fieldset {
+            margin-top: 10px;
+        }
+
+        a[target=_blank] {
+            color: blueviolet;
+            border: 1px solid violet;
+        }
+
+        a:hover {
+            color: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="signup" action="#">
+        <fieldset>
+            <legend>로그인 정보</legend>
+            <ul>
+
+                <li>
+                    <label for="user_id">아이디</label>
+                    <input type="text" id="user_id" name="user_id" required>
+
+                </li>
+                <li>
+                    <label for="user_pwd1">비밀번호</label>
+                    <input type="password" id="user_pwd1" name="user_pwd" required>
+
+                </li>
+                <li>
+                    <label for="user_pwd2">비밀번호 확인</label>
+                    <input type="password" id="user_pwd2" required>
+
+                </li>
+                <li>
+                    <label for="user_grade">회원 등급</label>
+                    <input type="text" id="user_grade" name="user_grade" value="준회원" readonly>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>개인 정보</legend>
+            <ul>
+                <li>
+                    <label for="user_name">이름</label>
+                    <input type="text" id="user_name" name="user_name" placeholder="5자 미만 공백없이" required>
+                </li>
+                <li>
+                    <label for="user_email">메일 주소</label>
+                    <input type="email" id="user_email" name="user_email" placeholder="abcd@domain.com">
+                </li>
+                <li>
+                    <label for="user_contact">연락처</label>
+                    <input type="tel" id="user_contact" name="user_contact" required>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <input type="submit" value="제출">
+        </fieldset>
+    </form>
+
+    <ul class="inside">
+        <li><a>메인 메뉴 : </a></li>
+        <li><a href="#">메뉴 1</a></li>
+        <li><a href="#" target="_blank">메뉴 2</a></li>
+    </ul>
+    <a href="#">dflskdjlsfjdkfj</a>
+</body>
+
+</html>

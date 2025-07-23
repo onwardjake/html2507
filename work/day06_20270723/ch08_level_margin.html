@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS와 박스 모델</title>
+    <link rel="stylesheet" href="./css/ch08_level_margin.css">
+</head>
+
+<body>
+    <div>
+        <!-- block level 요소 (ex. h1, div, p) -->
+        <h1>시간이란...</h1>
+        <div>
+            내일 죽을 것처럼 <p class="accent">오늘</p>을 살고
+        </div>
+        <p>영원히 살 것처럼<br>내일을 꿈꾸어라.</p>
+    </div>
+
+    <hr>
+    <div>
+        <!-- inline level 요소 (ex. span, img, storng) -->
+        <h1>시간이란...</h1>
+        <div>
+            내일 죽을 것처럼 <span class="accent">오늘</span>을 살고
+        </div>
+        <p>영원히 살 것처럼<br>내일을 꿈꾸어라.</p>
+    </div>
+
+    <hr>
+    <div>
+        <!-- 버튼 항목에 그림자 효과 추가하기 -->
+        <button class="button_shadow">Do it!</button>
+    </div>
+
+    <hr>
+    <div>
+        <!-- 테두리에 round 적용하기 -->
+        <img src="images/cat.jpg" alt="고양이 사진" class="round">
+        <img src="images/photo.jpg" alt="눈을 단 동그란 이끼를 뭉쳐서 손에 들고있는 사진" class="circle">
+    </div>
+
+    <hr>
+    <!-- margin 설정을 활용하여 요소를 수평으로 중앙에 배치하기 -->
+    <div class="margin_center"></div>
+
+    <!-- 마진 중첩 -->
+    <!-- 아래 마진과 위 마진이 만날 때는 큰 마진값으로 합쳐진다 -->
+    <!-- 오른쪽 마진과 왼쪽 마진이 만날 경우에는 중첩되지 않는다. -->
+
+    <hr>
+    <!-- 버튼 꾸미기 -->
+    <div class="div_button">
+        <button class="button_deco">버튼 1</button>
+        <button class="button_deco">버튼 2</button>
+    </div>
+</body>
+
+</html>
