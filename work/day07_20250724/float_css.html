@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float CSS property</title>
+    <style>
+        #contents {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px solid #777;
+            border-collapse: collapse;
+            padding: 3px;
+            text-align: center;
+        }
+
+        .txt_left_align {
+            text-align: left;
+        }
+
+        thead {
+            background-color: #ccc;
+        }
+
+        .td_width_desc {
+            width: 100%;
+        }
+
+        .float_left {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .float_right {
+            float: right;
+            margin-left: 10px;
+        }
+
+        .simple_box {
+            width: 100px;
+            height: 50px;
+            border: 5px solid #777;
+            padding: 3px;
+            background-color: #f8fa92;
+            text-align: center;
+            line-height: 50px;
+        }
+
+
+        .example {
+            margin-bottom: 40px;
+        }
+
+        .example p {
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contents">
+        <h2>float</h2>
+        <p>The float CSS property places an element on the left or right side of its container, allowing text and
+            inline elements to wrap around it. The element is removed from the normal flow of the page, though still
+            remaining a part of the flow(in contrast to <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute_positioning" target="_blank"
+                rel="noopener noreferrer">absolute positioning</a>).</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>values</td>
+                    <td class="td_width_desc">description</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>left</td>
+                    <td class="txt_left_align">The element must float on the left side of its containing block.</td>
+                </tr>
+                <tr>
+                    <td>right</td>
+                    <td class="txt_left_align">The element must float on the right side of its containing block.
+                    </td>
+                </tr>
+                <tr>
+                    <td>none</td>
+                    <td class="txt_left_align">The element must not float.</td>
+                </tr>
+                <tr>
+                    <td>inline-start</td>
+                    <td class="txt_left_align">The element must float on the start side of its containing block.
+                        That is the left side with
+                        ltr scripts, and the right side with rtl script.</td>
+                </tr>
+                <tr>
+                    <td>inline-left</td>
+                    <td class="txt_left_align">The element must float on the end side of its containing block. That
+                        is the right side with
+                        ltr scripts, and the left side with rtl scripts.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- flaot 예제 -->
+        <div>
+
+            <div class="example">
+                <h3>example 1 : none</h3>
+                <div class="simple_box">Float me</div>
+                <p>As much mud in the streets as if the waters had but newly retired from the face of the earth, and
+                    it
+                    would not be
+                    wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up
+                    Holborn Hill.</p>
+
+            </div>
+
+            <div class="example">
+                <h3>example 2 : float on the left side</h3>
+                <div class="simple_box float_left">Float me</div>
+                <p>As much mud in the streets as if the waters had but newly retired from the face of the earth, and
+                    it
+                    would not be
+                    wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up
+                    Holborn Hill.</p>
+
+            </div>
+
+            <div class="example">
+                <h3>example 3 : float on the right side</h3>
+                <div class="simple_box float_right">Float me</div>
+                <p>As much mud in the streets as if the waters had but newly retired from the face of the earth, and
+                    it
+                    would not be
+                    wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up
+                    Holborn Hill.</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

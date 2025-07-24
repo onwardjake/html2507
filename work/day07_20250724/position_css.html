@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float CSS property</title>
+    <style>
+        #contents {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px solid #777;
+            border-collapse: collapse;
+            padding: 3px;
+            text-align: center;
+        }
+
+        .txt_left_align {
+            text-align: left;
+        }
+
+        thead {
+            background-color: #ccc;
+        }
+
+        .td_width_desc {
+            width: 100%;
+        }
+
+        .box1 {
+            background-color: #f8fa92;
+        }
+
+        .box2 {
+            background-color: #ff5548;
+        }
+
+        .fixed_box {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+
+        .simple_box {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            border: 5px solid #777;
+            padding: 3px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .example {
+            width: 500px;
+            height: 300px;
+            margin: 40px 0;
+            border: 1px solid #333;
+            overflow: scroll;
+        }
+
+        .example p {
+            border: 1px solid #999;
+        }
+
+        code {
+            color: #8cb4ff;
+            font-weight: bold;
+            text-decoration: underline;
+            background-color: rgb(255, 254, 182);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contents">
+        <h2>position</h2>
+        <p>The position CSS property sets how an element is positioned in a document. <br>
+            The <code>top</code>,
+            <code>right</code>, <code>bottom</code>, and <code>left</code> physical properties and the
+            <code>inset-block-start</code>, <code>inset-block-end</code>, <code>inset-inline-start</code>, and
+            <code>inset-inline-end</code> flow-relative logical properties can be used to determine the final location
+            of positioned elements.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>values</td>
+                    <td class="td_width_desc">description</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>static</td>
+                    <td class="txt_left_align">
+                        The element is positioned according to the Normal Flow of the document.<br>
+                        The <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and
+                        <code>z-index</code> properties have no effect. <br>
+                        This is the default value.
+                    </td>
+                </tr>
+                <tr>
+                    <td>relative</td>
+                    <td class="txt_left_align">
+                        The element is positioned according to the normal flow of the document, and then offset relative
+                        to itself based on the values of <code>top</code>, <code>right</code>, <code>bottom</code>, and
+                        <code>left</code>. <br>
+                        The offset does not affect the position of any other elements; thus, the space given for the
+                        element in the page layout is the same as if position were <code>static</code>. <br>
+                        This value creates a new <a
+                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context"
+                            target="_blank" rel="noopener noreferrer">stacking context</a> when the value of
+                        <code>z-index</code> is not
+                        <code>auto</code>. <br>
+                        Its effect on <code>tabel-*-group</code>, <code>table-row</code>,
+                        <code>tabel-column</code>, <code>tabel-cell</code>, and <code>table-caption</code> elements is
+                        undefined.
+                    </td>
+                </tr>
+                <tr>
+                    <td>absolute</td>
+                    <td class="txt_left_align">
+                        The element is removed from the normal document flow, and no space is
+                        created for the element in the page layout. The element is positioned relative to its closet
+                        positioned ancestor (if any) or to the initial containing block. <br>
+                        This value creates a new stacking context when the value of z-index is not auto. The margins of
+                        absolutely positioned boxes do not collapse with other margins.
+                    </td>
+                </tr>
+                <tr>
+                    <td>fixed</td>
+                    <td class="txt_left_align">
+                        The element is removed from the normal document flow, and no space is created for the element in
+                        the page layout. The element is positioned relative to its initial containing block, which is
+                        the viewport in the case of visual media. Its final position is determined by the values of
+                        <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>. <br>
+                        This value always creates a new stacking context. In printed documents, the element is placed in
+                        the same position on every page.
+                    </td>
+                </tr>
+                <tr>
+                    <td>sticky</td>
+                    <td class="txt_left_align">
+                        The element is positioned according to the normal flow of the document, and then offset relative
+                        to its nearest scrolling ancestor and containing block (nearest block-level ancestor), including
+                        table-related elements, based on the values of <code>top</code>, <code>right</code>,
+                        <code>bottom</code>, and <code>left</code>. The offset does not affect the position of any other
+                        elements. <br>
+                        This value always creates a new stacking context. Note that a sticky element "sticks" to its
+                        nearest ancestor that has a "scrolling mechanism" (created whtn <code>overflow</code> is
+                        <code>hidden</code>, <code>scroll</code>, <code>auto</code>, or <code>overlay</code>), even if
+                        that ancestor isn't the nearest actually scrolling ancestor.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="example">
+            <h3>example : sticky</h3>
+            <p>In this demo you can control the position property for the yellow box.</p>
+            <div class="simple_box box1"></div>
+            <div class="simple_box box2 fixed_box">I'm sticked!</div>
+            <div class="simple_box box1"></div>
+            <p>To see the effect of sticky positioning, select the position: sticky option and scroll this
+                container.
+            </p>
+            <p>The element will scroll along with its container, until it is at the top of the container (or reaches
+                the
+                offset
+                specified in top), and will then stop scrolling, so it stays visible.</p>
+            <p>The rest of this text is only supplied to make sure the container overflows, so as to enable you to
+                scroll it and see
+                the effect.</p>
+
+            <hr>
+            <p>Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy
+                lies
+                a small
+                unregarded yellow sun. Orbiting this at a distance of roughly ninety-two million miles is an utterly
+                insignificant
+                little blue green planet whose ape-descended life forms are so amazingly primitive that they still
+                think
+                digital watches
+                are a pretty neat idea.</p>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
