@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>float CSS property</title>
+    <title>position CSS property</title>
     <style>
         #contents {
             width: 90%;
@@ -40,10 +40,29 @@
             background-color: #ff5548;
         }
 
+        .box3 {
+            background-color: #8cb4ff;
+        }
+
+        .box4 {
+            background-color: darkseagreen;
+        }
+
         .fixed_box {
             position: fixed;
-            top: 20px;
-            left: 20px;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .absolute_box {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .sticky_box {
+            position: sticky;
+            top: 10px;
         }
 
         .simple_box {
@@ -57,6 +76,8 @@
         }
 
         .example {
+            position: relative;
+            /* transform: scale(1); */
             width: 500px;
             height: 300px;
             margin: 40px 0;
@@ -79,7 +100,7 @@
 
 <body>
     <div id="contents">
-        <h2>position</h2>
+        <h1>position</h1>
         <p>The position CSS property sets how an element is positioned in a document. <br>
             The <code>top</code>,
             <code>right</code>, <code>bottom</code>, and <code>left</code> physical properties and the
@@ -88,6 +109,7 @@
             of positioned elements.
         </p>
 
+        <h2>VALUES</h2>
         <table>
             <thead>
                 <tr>
@@ -99,74 +121,160 @@
                 <tr>
                     <td>static</td>
                     <td class="txt_left_align">
-                        The element is positioned according to the Normal Flow of the document.<br>
-                        The <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and
-                        <code>z-index</code> properties have no effect. <br>
-                        This is the default value.
+                        <p>요소를 일반적인 문서 흐름에 따라 배치합니다. <br>top, right, bottom, left, z-index 속성이 아무런 영향도 주지 않습니다. 기본값입니다.
+                        </p>
+                        <p>
+                            The element is <b>positioned</b> according to the Normal Flow of the document.<br>
+                            The <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and
+                            <code>z-index</code> properties have no effect. <br>
+                            This is the default value.
+                        </p>
                     </td>
                 </tr>
                 <tr>
                     <td>relative</td>
                     <td class="txt_left_align">
-                        The element is positioned according to the normal flow of the document, and then offset relative
-                        to itself based on the values of <code>top</code>, <code>right</code>, <code>bottom</code>, and
-                        <code>left</code>. <br>
-                        The offset does not affect the position of any other elements; thus, the space given for the
-                        element in the page layout is the same as if position were <code>static</code>. <br>
-                        This value creates a new <a
-                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context"
-                            target="_blank" rel="noopener noreferrer">stacking context</a> when the value of
-                        <code>z-index</code> is not
-                        <code>auto</code>. <br>
-                        Its effect on <code>tabel-*-group</code>, <code>table-row</code>,
-                        <code>tabel-column</code>, <code>tabel-cell</code>, and <code>table-caption</code> elements is
-                        undefined.
+                        <p>
+                            요소를 일반적인 문서 흐름에 따라 배치하고, 자기 자신을 기준으로 top, right, bottom, left의 값에 따라 오프셋을 적용합니다. 오프셋은 다른
+                            요소에는
+                            영향을 주지 않습니다. 따라서 페이지
+                            레이아웃에서 요소가 차지하는 공간은 static일 때와 같습니다. <br>
+                            z-index의 값이 auto가 아니라면 새로운 쌓임 맥락을 생성합니다.
+                        </p>
+                        <p>
+                            The element is <b>positioned</b> according to the normal flow of the document, and then
+                            offset
+                            relative
+                            to itself based on the values of <code>top</code>, <code>right</code>, <code>bottom</code>,
+                            and
+                            <code>left</code>. <br>
+                            The offset does not affect the position of any other elements; thus, the space given for the
+                            element in the page layout is the same as if position were <code>static</code>. <br>
+                            This value creates a new <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Stacking_context"
+                                target="_blank" rel="noopener noreferrer">stacking context</a> when the value of
+                            <code>z-index</code> is not
+                            <code>auto</code>. <br>
+                            Its effect on <code>tabel-*-group</code>, <code>table-row</code>,
+                            <code>tabel-column</code>, <code>tabel-cell</code>, and <code>table-caption</code> elements
+                            is
+                            undefined.
+                        </p>
                     </td>
                 </tr>
                 <tr>
                     <td>absolute</td>
                     <td class="txt_left_align">
-                        The element is removed from the normal document flow, and no space is
-                        created for the element in the page layout. The element is positioned relative to its closet
-                        positioned ancestor (if any) or to the initial containing block. <br>
-                        This value creates a new stacking context when the value of z-index is not auto. The margins of
-                        absolutely positioned boxes do not collapse with other margins.
+                        <p>
+                            요소를 일반적인 문서 흐름에서 제거하고, 페이지 레이아웃에 공간도 배정하지 않습니다. 대신 가장 가까운 위치 지정 조상 요소에 대해 상대적으로 배치합니다. 단, 조상
+                            중 위치 지정 요소가 없다면 초기 컨테이닝 블록을
+                            기준으로 삼습니다. 최종 위치는 top, right, bottom, left 값이 지정합니다.
+
+                            z-index의 값이 auto가 아니라면 새로운 쌓임 맥락을 생성합니다. 절대 위치 지정 요소의 바깥 여백은 서로 상쇄(margin이 collapse 안됨)되지
+                            않습니다.
+                        </p>
+                        <p>
+                            The element is <b>removed</b> from the normal document flow, and no space is
+                            created for the element in the page layout. The element is positioned relative to its closet
+                            positioned ancestor (if any) or to the initial containing block. <br>
+                            This value creates a new stacking context when the value of z-index is not auto. The margins
+                            of
+                            absolutely positioned boxes do not collapse with other margins.
+                        </p>
                     </td>
                 </tr>
                 <tr>
                     <td>fixed</td>
                     <td class="txt_left_align">
-                        The element is removed from the normal document flow, and no space is created for the element in
-                        the page layout. The element is positioned relative to its initial containing block, which is
-                        the viewport in the case of visual media. Its final position is determined by the values of
-                        <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>. <br>
-                        This value always creates a new stacking context. In printed documents, the element is placed in
-                        the same position on every page.
+                        <p>
+                            요소를 일반적인 문서 흐름에서 제거하고, 페이지 레이아웃에 공간도 배정하지 않습니다. 대신 뷰포트의 초기 컨테이닝 블록을 기준으로 삼아 배치합니다. 단, 요소의 조상
+                            중 하나가 transform,
+                            perspective, filter 속성 중 어느 하나라도 none이 아니라면 (CSS Transforms 명세 참조) 뷰포트 대신 그 조상을 컨테이닝 블록으로
+                            삼습니다. (perspective와 filter의 경우
+                            브라우저별로 결과가 다름에 유의) 최종 위치는 top, right, bottom, left 값이 지정합니다.
+
+                            이 값은 항상 새로운 쌓임 맥락을 생성합니다. 문서를 인쇄할 때는 해당 요소가 모든 페이지의 같은 위치에 출력됩니다.
+                        </p>
+                        <p>
+                            The element is <b>removed</b> from the normal document flow, and no space is created for the
+                            element in
+                            the page layout. The element is positioned relative to its initial containing block, which
+                            is
+                            the viewport in the case of visual media. Its final position is determined by the values of
+                            <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>. <br>
+                            This value always creates a new stacking context. In printed documents, the element is
+                            placed in
+                            the same position on every page.
+                        </p>
                     </td>
                 </tr>
                 <tr>
                     <td>sticky</td>
                     <td class="txt_left_align">
-                        The element is positioned according to the normal flow of the document, and then offset relative
-                        to its nearest scrolling ancestor and containing block (nearest block-level ancestor), including
-                        table-related elements, based on the values of <code>top</code>, <code>right</code>,
-                        <code>bottom</code>, and <code>left</code>. The offset does not affect the position of any other
-                        elements. <br>
-                        This value always creates a new stacking context. Note that a sticky element "sticks" to its
-                        nearest ancestor that has a "scrolling mechanism" (created whtn <code>overflow</code> is
-                        <code>hidden</code>, <code>scroll</code>, <code>auto</code>, or <code>overlay</code>), even if
-                        that ancestor isn't the nearest actually scrolling ancestor.
+                        <p>
+                            요소를 일반적인 문서 흐름에 따라 배치하고, 테이블 관련 요소를 포함해 가장 가까운, 스크롤 되는 조상과, 표 관련 요소를 포함한 컨테이닝 블록(가장 가까운 블록
+                            레벨 조상) 을 기준으로 top, right,
+                            bottom, left의 값에 따라 오프셋을 적용합니다. 오프셋은 다른 요소에는 영향을 주지 않습니다.
+
+                            이 값은 항상 새로운 쌓임 맥락을 생성합니다. 끈끈한 요소는 "스크롤 동작"(overflow가 hidden, scroll, auto 혹은 overlay)이 존재하는
+                            가장 가까운 조상에 달라붙으며, 사실 그 조상은
+                            스크롤 불가하며 실제로 스크롤 가능한 조상이 따로 존재할 경우 "끈끈한" 동작을 보이지 않는 점에 주의하세요. (W3C CSSWG의 Github 이슈 참조)
+                        </p>
+                        <p>
+                            The element is <b>positioned</b> according to the normal flow of the document, and then
+                            offset
+                            relative
+                            to its nearest scrolling ancestor and containing block (nearest block-level ancestor),
+                            including
+                            table-related elements, based on the values of <code>top</code>, <code>right</code>,
+                            <code>bottom</code>, and <code>left</code>. The offset does not affect the position of any
+                            other
+                            elements. <br>
+                            This value always creates a new stacking context. Note that a sticky element "sticks" to its
+                            nearest ancestor that has a "scrolling mechanism" (created whtn <code>overflow</code> is
+                            <code>hidden</code>, <code>scroll</code>, <code>auto</code>, or <code>overlay</code>), even
+                            if
+                            that ancestor isn't the nearest actually scrolling ancestor.
+
+                        </p>
                     </td>
                 </tr>
             </tbody>
         </table>
 
+        <h2>배치 유형 (Types of positoing)</h2>
+        <div class="desc">
+            <ul>
+                <li>
+                    <p>위치 지정 요소란 position의 계산값이 relative, absolute, fixed, sticky 중 하나인 요소입니다. 즉, 값이 static이 아닌 모든 요소를
+                        말합니다.</p>
+                </li>
+                <li>
+                    <p>상대 위치 지정 요소는position의 계산값이 relative인 요소입니다. top과 bottom은 원래 위치에서의 세로축 거리를, left와 right은 원래 위치에서의
+                        가로축 거리를 지정합니다.</p>
+                </li>
+                <li>
+                    <p>절대 위치 지정 요소는position의 계산값이 absolute 또는 fixed인 요소입니다.top, right, bottom, left는 요소의 컨테이닝 블록(위치의
+                        기준점이 되는 조상 요소) 모서리로부터의 거리를
+                        지정합니다. 요소가 바깥 여백을 가진다면 거리에 더합니다. 절대 위치 지정 요소는 새로운 블록 서식 맥락을 생성합니다.</p>
+                </li>
+                <li>
+                    <p>끈끈한 위치 지정 요소는 position의 계산값이 sticky인 요소입니다. 평소에는 상대 위치 지정 요소로 처리하지만, 컨테이닝 블록이 자신의 플로우 루트(또는, 스크롤
+                        컨테이너)에서 지정한 임계값(top 등으로
+                        지정)을 넘으면 마치 fixed처럼 화면에 고정합니다. 고정 상태는 컨테이닝 블록의 반대편 모서리를 만나면 해제됩니다.</p>
+                </li>
+            </ul>
+        </div>
+
+        <h2>EXAMPLE</h2>
         <div class="example">
-            <h3>example : sticky</h3>
+            <h3>position example</h3>
             <p>In this demo you can control the position property for the yellow box.</p>
-            <div class="simple_box box1"></div>
-            <div class="simple_box box2 fixed_box">I'm sticked!</div>
-            <div class="simple_box box1"></div>
+            <div class="simple_box box1">static</div>
+            <div class="simple_box box2 fixed_box">I'm fixed!</div>
+            <div class="simple_box box3 absolute_box">I'm absolute!</div>
+            <div class="simple_box box4 sticky_box">I'm sticked!</div>
+            <div class="simple_box box1">static</div>
             <p>To see the effect of sticky positioning, select the position: sticky option and scroll this
                 container.
             </p>
@@ -190,6 +298,9 @@
                 are a pretty neat idea.</p>
         </div>
 
+        <p><a href="./containing_block_css.html" target="_blank">참고 : containing block 이해하기</a></p>
+        <p><a href="https://developer.mozilla.org/ko/docs/Web/CSS/CSS_display/Containing_block" target="_blank">참고 :
+                containing block 이해하기 (MDN)</a></p>
 
     </div>
 </body>
