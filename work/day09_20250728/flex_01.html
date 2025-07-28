@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible box layout</title>
+
+    <style>
+        .container {
+            width: 700px;
+            display: flex;
+            background: #eee;
+            border: 1px solid #222;
+            margin-bottom: 30px;
+        }
+
+        #opt1 {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        #opt1_wrap {
+            /* flex-direction: row;
+            flex-wrap: wrap; */
+            flex-flow: row wrap;
+
+            /* 주축 시작점 기준으로 정렬 */
+            justify-content: flex-start;
+        }
+
+        #opt1_wrap_flex_end {
+            flex-flow: row wrap;
+            /* 주축 끝점 기준으로 정렬 */
+            justify-content: flex-end;
+        }
+
+        #opt1_wrap_center {
+            flex-flow: row wrap;
+            /* 주축 중앙 기준으로 정렬 */
+            justify-content: center;
+        }
+
+        #opt1_wrap_space_around {
+            flex-flow: row wrap;
+            /* 전체 항목을 같은 간격으로 정렬 */
+            justify-content: space-around;
+        }
+
+        #opt1_wrap_space_between {
+            flex-flow: row wrap;
+            /* 시작점과 끝점 정렬 후 중간 항목은 같은 간격으로 정렬 */
+            /* 첫 번째 항목은 주축 시작점에, 마지막 항목은 주축 끝점에 배치한 후 나머지 항목은 같은 간격으로 정렬 */
+            justify-content: space-between;
+        }
+
+        #opt1_wrap_space_enenly {
+            flex-flow: row wrap;
+            /* 전체 항목을 같은 간격으로 정렬 */
+            /* 각 항목의 여백은 모두 동일 */
+            justify-content: space-evenly;
+        }
+
+        #opt1_wrap_reverse {
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+        }
+
+        #opt2 {
+            /* flex-direction: row-reverse;
+            flex-wrap: nowrap; */
+            flex-flow: row-reverse nowrap;
+        }
+
+        #opt2_wrap {
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+        }
+
+        #opt3 {
+            flex-direction: column;
+        }
+
+        #opt4 {
+            flex-direction: column-reverse;
+        }
+
+        .flex_item1 {
+            background-color: burlywood;
+            width: 70px;
+            line-height: 30px;
+            text-align: center;
+            margin: 5px;
+            border: 1px dotted red;
+        }
+
+        .flex_item2 {
+            background-color: rgb(138, 222, 135);
+            width: 70px;
+            line-height: 30px;
+            text-align: center;
+            margin: 5px;
+            border: 1px dotted red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Flexible box layout</h1>
+    <div>
+        <h4>flex direction : row / nowrap</h4>
+        <div class="container" id="opt1">
+            <p class="flex_item1">1</p>
+            <p class="flex_item2">2</p>
+            <p class="flex_item1">3</p>
+            <p class="flex_item2">4</p>
+            <p class="flex_item1">5</p>
+            <p class="flex_item2">6</p>
+            <p class="flex_item1">7</p>
+            <p class="flex_item2">8</p>
+            <p class="flex_item1">9</p>
+            <p class="flex_item2">10</p>
+            <p class="flex_item1">11</p>
+            <p class="flex_item2">12</p>
+            <p class="flex_item1">13</p>
+        </div>
+        <h4>flex direction : row / wrap / flex-start</h4>
+        <div class="container" id="opt1_wrap">
+            <p class="flex_item1">1</p>
+            <p class="flex_item2">2</p>
+            <p class="flex_item1">3</p>
+            <p class="flex_item2">4</p>
+            <p class="flex_item1">5</p>
+            <p class="flex_item2">6</p>
+            <p class="flex_item1">7</p>
+            <p class="flex_item2">8</p>
+            <p class="flex_item1">9</p>
+            <p class="flex_item2">10</p>
+            <p class="flex_item1">11</p>
+            <p class="flex_item2">12</p>
+            <p class="flex_item1">13</p>
+        </div>
+        <h4>flex direction : row / wrap / flex-end</h4>
+        <div class="container" id="opt1_wrap_flex_end">
+            <p class="flex_item1">1</p>
+            <p class="flex_item2">2</p>
+            <p class="flex_item1">3</p>
+            <p class="flex_item2">4</p>
+            <p class="flex_item1">5</p>
+            <p class="flex_item2">6</p>
+            <p class="flex_item1">7</p>
+            <p class="flex_item2">8</p>
+            <p class="flex_item1">9</p>
+            <p class="flex_item2">10</p>
+            <p class="flex_item1">11</p>
+            <p class="flex_item2">12</p>
+            <p class="flex_item1">13</p>
+        </div>
+        <h4>flex direction : row / wrap / center</h4>
+        <div class="container" id="opt1_wrap_center">
+            <p class="flex_item1">1</p>
+            <p class="flex_item2">2</p>
+            <p class="flex_item1">3</p>
+            <p class="flex_item2">4</p>
+            <p class="flex_item1">5</p>
+            <p class="flex_item2">6</p>
+            <p class="flex_item1">7</p>
+            <p class="flex_item2">8</p>
+            <p class="flex_item1">9</p>
+            <p class="flex_item2">10</p>
+            <p class="flex_item1">11</p>
+            <p class="flex_item2">12</p>
+            <p class="flex_item1">13</p>
+        </div>
+        <h4>flex direction : row / wrap / space-between</h4>
+        <div class="container" id="opt1_wrap_space_between">
+            <p class="flex_item1">1</p>
+            <p class="flex_item2">2</p>
+            <p class="flex_item1">3</p>
+            <p class="flex_item2">4</p>
+            <p class="flex_item1">5</p>
+            <p class="flex_item2">6</p>
+            <p class="flex_item1">7</p>
+            <p class="flex_item2">8</p>
+            <p class="flex_item1">9</p>
+            <p class="flex_item2">10</p>
+            <p class="flex_item1">11</p>
+            <p class="flex_item2">12</p>
+            <p class="flex_item1">13</p>
+        </div>
+        <h4>flex direction : row / wrap / space-around</h4>
+        <div class="container" id="opt1_wrap_space_around">
+            <p class="flex_item1">1</p>
+            <p class="flex_item2">2</p>
+            <p class="flex_item1">3</p>
+            <p class="flex_item2">4</p>
+            <p class="flex_item1">5</p>
+            <p class="flex_item2">6</p>
+            <p class="flex_item1">7</p>
+            <p class="flex_item2">8</p>
+            <p class="flex_item1">9</p>
+            <p class="flex_item2">10</p>
+            <p class="flex_item1">11</p>
+            <p class="flex_item2">12</p>
+            <p class="flex_item1">13</p>
+        </div>
+        <h4>flex direction : row / wrap / space-evenly</h4>
+        <div class="container" id="opt1_wrap_space_enenly">
+            <p class="flex_item1">1</p>
+            <p class="flex_item2">2</p>
+            <p class="flex_item1">3</p>
+            <p class="flex_item2">4</p>
+            <p class="flex_item1">5</p>
+            <p class="flex_item2">6</p>
+            <p class="flex_item1">7</p>
+            <p class="flex_item2">8</p>
+            <p class="flex_item1">9</p>
+            <p class="flex_item2">10</p>
+            <p class="flex_item1">11</p>
+            <p class="flex_item2">12</p>
+            <p class="flex_item1">13</p>
+        </div>
+
+        <h4>flex direction : row / wrap-reverse</h4>
+        <div class="container" id="opt1_wrap_reverse">
+            <p class="flex_item1">1</p>
+            <p class="flex_item2">2</p>
+            <p class="flex_item1">3</p>
+            <p class="flex_item2">4</p>
+            <p class="flex_item1">5</p>
+            <p class="flex_item2">6</p>
+            <p class="flex_item1">7</p>
+            <p class="flex_item2">8</p>
+            <p class="flex_item1">9</p>
+            <p class="flex_item2">10</p>
+            <p class="flex_item1">11</p>
+            <p class="flex_item2">12</p>
+            <p class="flex_item1">13</p>
+        </div>
+        <h4>flex direction : row-reverse / nowrap</h4>
+        <div class="container" id="opt2">
+            <p class="flex_item1">1</p>
+            <p class="flex_item2">2</p>
+            <p class="flex_item1">3</p>
+            <p class="flex_item2">4</p>
+            <p class="flex_item1">5</p>
+            <p class="flex_item2">6</p>
+            <p class="flex_item1">7</p>
+            <p class="flex_item2">8</p>
+            <p class="flex_item1">9</p>
+            <p class="flex_item2">10</p>
+            <p class="flex_item1">11</p>
+            <p class="flex_item2">12</p>
+            <p class="flex_item1">13</p>
+        </div>
+        <h4>flex direction : row-reverse / wrap</h4>
+        <div class="container" id="opt2_wrap">
+            <p class="flex_item1">1</p>
+            <p class="flex_item2">2</p>
+            <p class="flex_item1">3</p>
+            <p class="flex_item2">4</p>
+            <p class="flex_item1">5</p>
+            <p class="flex_item2">6</p>
+            <p class="flex_item1">7</p>
+            <p class="flex_item2">8</p>
+            <p class="flex_item1">9</p>
+            <p class="flex_item2">10</p>
+            <p class="flex_item1">11</p>
+            <p class="flex_item2">12</p>
+            <p class="flex_item1">13</p>
+        </div>
+        <div class="container" id="opt3">
+            <p class="flex_item1">1</p>
+            <p class="flex_item2">2</p>
+            <p class="flex_item1">3</p>
+            <p class="flex_item2">4</p>
+            <p class="flex_item1">5</p>
+            <p class="flex_item2">6</p>
+            <p class="flex_item1">7</p>
+            <p class="flex_item2">8</p>
+            <p class="flex_item1">9</p>
+            <p class="flex_item2">10</p>
+            <p class="flex_item1">11</p>
+            <p class="flex_item2">12</p>
+            <p class="flex_item1">13</p>
+        </div>
+        <div class="container" id="opt4">
+            <p class="flex_item1">1</p>
+            <p class="flex_item2">2</p>
+            <p class="flex_item1">3</p>
+            <p class="flex_item2">4</p>
+            <p class="flex_item1">5</p>
+            <p class="flex_item2">6</p>
+            <p class="flex_item1">7</p>
+            <p class="flex_item2">8</p>
+            <p class="flex_item1">9</p>
+            <p class="flex_item2">10</p>
+            <p class="flex_item1">11</p>
+            <p class="flex_item2">12</p>
+            <p class="flex_item1">13</p>
+        </div>
+    </div>
+</body>
+
+</html>
