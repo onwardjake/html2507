@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background</title>
+    <style>
+        div {
+            /* background: linear-gradient(60deg, red, yellow, red, yellow, red); */
+            background-color: blanchedalmond;
+            border: 1px solid #5a65fa;
+        }
+
+        .clip_border {
+            background-color: brown;
+            border: 10px solid #5a65fa;
+            padding: 20px;
+            background-clip: border-box;
+        }
+
+        .clip_padding {
+            background-color: brown;
+            border: 10px solid #060b4d;
+            padding: 20px;
+            background-clip: padding-box;
+        }
+
+        .clip_content {
+            background-color: brown;
+            border: 10px solid #1020fc;
+            padding: 20px;
+            background-clip: content-box;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left: -30px;
+        }
+
+        li {
+            background-image: url('./images/book-icon.png');
+            background-repeat: no-repeat;
+            background-position: left center;
+            padding-left: 50px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>제이크 퍼블리싱</h1>
+        <ul>소개
+            <li>회사소개</li>
+            <li>도서</li>
+            <li>자료실</li>
+            <li>동영상강의</li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="clip_border">
+            Border clipping
+        </div>
+        <div class="clip_padding">
+            Padding clipping
+        </div>
+        <div class="clip_content">
+            Content clipping
+        </div>
+    </div>
+</body>
+
+</html>
