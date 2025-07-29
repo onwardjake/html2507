@@ -7,7 +7,7 @@
     <title>Grid layout</title>
     <style>
         .container {
-            text-align: center;
+            width: 600px;
             display: grid;
 
             /* 그리드의 column 넓이를 지정한다 */
@@ -35,11 +35,6 @@
         }
 
         .container2_gap {
-            width: 600px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, minmax(100px, auto));
-            margin-bottom: 20px;
             gap: 20px 30px;
         }
 
@@ -62,6 +57,7 @@
         .items {
             background-color: #ccc;
             border: 1px solid #333;
+            text-align: center;
         }
 
         .items:nth-child(even) {
@@ -89,7 +85,7 @@
         <div class="items">6</div>
     </div>
 
-    <div class="container2_gap">
+    <div class="container2 container2_gap">
         <div class="items">1</div>
         <div class="items">2</div>
         <div class="items">3</div>

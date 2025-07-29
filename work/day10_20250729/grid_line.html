@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid line</title>
+    <style>
+        .container {
+            width: 1000px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            gap: 1rem;
+        }
+
+        .box1 {
+            background-color: blue;
+            grid-column-start: 1;
+            grid-column-end: -1;
+            border-radius: 7px;
+        }
+
+        .box2 {
+            background-color: rgb(68, 255, 99);
+            grid-row-start: 2;
+            grid-row-end: -1;
+        }
+
+        .box3 {
+            background-color: rgb(255, 180, 41);
+            grid-column: 2 / -1;
+        }
+
+        .box4 {
+            background-color: rgb(252, 255, 69);
+            grid-column-start: 2;
+
+            /* grid-row: 3 / 4;와 동일 */
+            grid-row: 3;
+        }
+
+        .box5 {
+            background-color: rgb(255, 0, 0);
+            grid-column-start: 3;
+            grid-row: 3 / -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+    </div>
+
+</body>
+
+</html>
