@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Gallery</title>
+    <style>
+        .container {
+            width: 700px;
+            margin: 20px auto;
+            display: grid;
+            gap: 5px;
+            grid-template-areas:
+                "photo1 photo1 photo2"
+                "photo1 photo1 photo3"
+                "photo4 photo5 photo6";
+        }
+
+        .container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .photo1 {
+            grid-area: photo1;
+        }
+
+        .photo2 {
+            grid-area: photo2;
+        }
+
+        .photo3 {
+            grid-area: photo3;
+        }
+
+        .photo4 {
+            grid-area: photo4;
+        }
+
+        .photo5 {
+            grid-area: photo5;
+        }
+
+        .photo6 {
+            grid-area: photo6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="./image/photo-1.jpg" alt="다뜻한 차를 들고 있는 사진" class="photo1">
+        <img src="./image/photo-2.jpg" alt="펭귄" class="photo2">
+        <img src="./image/photo-3.jpg" alt="눈 쌓인 집" class="photo3">
+        <img src="./image/photo-4.jpg" alt="오로라" class="photo4">
+        <img src="./image/photo-5.jpg" alt="눈을 들고 있는 소녀" class="photo5">
+        <img src="./image/photo-6.jpg" alt="빨간 새" class="photo6">
+    </div>
+</body>
+
+</html>
