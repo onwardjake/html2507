@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex layout w/ media query</title>
+    <style>
+        .column {
+            width: 100%;
+        }
+
+        .img_container {
+            width: 100%;
+        }
+
+        @media screen and (min-Width:769px) and (max-Width:1024px) {
+            .row {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                gap: 10px;
+            }
+
+            .column {
+                flex-grow: 0;
+                flex-shrink: 0;
+                flex-basis: 45%;
+            }
+
+            .img_container {
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-Width:1025px) {
+            .row {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .img_container {
+                width: 100%;
+            }
+
+            .column {
+                flex-grow: 0;
+                flex-shrink: 0;
+                flex-basis: 30%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="./image/kitten-1.jpg" alt="다소곳이 앉아 있는 고양이" class="img_container">
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="./image/kitten-2.jpg" alt="위를 쳐다보는 고양이" class="img_container">
+                </div>
+
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="./image/kitten-3.jpg" alt="멋 곳을 응시하는 고양이" class="img_container">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

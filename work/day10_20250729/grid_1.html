@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout</title>
+    <style>
+        .container {
+            text-align: center;
+            display: grid;
+
+            /* 그리드의 column 넓이를 지정한다 */
+            grid-template-columns: 100px 200px 300px;
+
+            /* 그리도의 row 높이를 지정한다 */
+            /* grid-template-rows: 50px 100px; */
+            /* 동적으로 행이 추가되는 경우를 위해 auto rows로 설정한다 */
+            grid-auto-rows: 100px;
+            margin-bottom: 20px;
+
+        }
+
+        .container2 {
+            width: 600px;
+            display: grid;
+            /* 상대적인 크기를 지정하기 위해 fr(fraction) 단위를 사용한다 */
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            grid-template-columns: repeat(3, 1fr);
+
+            /* grid-template-rows: 2fr 1fr 1fr; */
+            /* 행 높이 최소 100px, 최대 auto */
+            grid-template-rows: repeat(2, minmax(100px, auto));
+            margin-bottom: 20px;
+        }
+
+        .container2_gap {
+            width: 600px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, minmax(100px, auto));
+            margin-bottom: 20px;
+            gap: 20px 30px;
+        }
+
+        .container_auto_fit {
+            width: 800px;
+            border: 1px solid #ccc;
+            display: grid;
+            margin-bottom: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+
+        .container_auto_fill {
+            width: 800px;
+            border: 1px solid #ccc;
+            display: grid;
+            margin-bottom: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        }
+
+        .items {
+            background-color: #ccc;
+            border: 1px solid #333;
+        }
+
+        .items:nth-child(even) {
+            background-color: rgb(255, 238, 80);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items">4</div>
+        <div class="items">5</div>
+        <div class="items">6</div>
+    </div>
+
+    <div class="container2">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items">4</div>
+        <div class="items">5</div>
+        <div class="items">6</div>
+    </div>
+
+    <div class="container2_gap">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items">4</div>
+        <div class="items">5</div>
+        <div class="items">6</div>
+    </div>
+
+    <div class="container_auto_fit">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items">4</div>
+        <div class="items">5</div>
+    </div>
+
+    <div class="container_auto_fill">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items">4</div>
+        <div class="items">5</div>
+    </div>
+
+</body>
+
+</html>
