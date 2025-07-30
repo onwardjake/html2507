@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS funcion</title>
+    <link rel="stylesheet" href="./css/css_func.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="contents">
+            <h2>1) :root 가상 클래스와 var() 함수</h2>
+            <hr>
+            <h3>변수 만들기</h3>
+            <ul>
+                <li>:root 가상 클래스는 CSS 변수를 선언하기 위한 용도로 사용하고, CSS 코드의 다른 선택자보다 위에 작성한다.</li>
+                <li>CSS 변수 이름 앞에는 반드시 하이픈 2개를 붙여야 한다.</li>
+                <li>변수 이름은 대소문자를 구분한다.</li>
+                <li>변수 이름에는 문자와 숫자, 하이픈, 언더바를 포함할 수 있다.</li>
+                <li>참고. :root가 아닌 다른 요소에서도 CSS 변수를 선언할 수 있지만, 이 경우에는 해당 요소와 그 하위 요소에서만 사용할 수 있다.</li>
+            </ul>
+            <p class="example">:root { <br>&nbsp;&nbsp;--bg-color: #222;<br>}</p>
+            <h3>변수 사용하기</h3>
+            <ul>
+                <li>var() 함수는 CSS 변수 값을 가져올 때 사용합니다. var()함수 괄호 안에 변수 이름을 넣으면 됩니다.</li>
+            </ul>
+            <p class="example">
+                :root { <br>&nbsp;&nbsp;--main-bg-color: #222;<br>&nbsp;&nbsp;--main-text-color: #fff;<br>}
+                <br>
+                body {<br>&nbsp;&nbsp;background-color: var(--main-bg-color);<br>&nbsp;&nbsp;color:
+                var(--main-text-color); <br>}
+            </p>
+        </div>
+        <div class="contents">
+            <h2>2) 계산식으로 값을 결정하는 calc() 함수</h2>
+            <hr>
+            <ul>
+                <li>괄호 안에는 크깃값이나 각도, 시간, 백분율, 숫자 등 다양한 단위의 값을 사용한 계산식이 들어간다.</li>
+                <li>계산식에는 4칙연산 연산자(+, -, *, /)도 사용할 수 있다.</li>
+                <li>+, - 사용 시에는 연산자 앞뒤로 공백을 두어서 다른 기호와 구별될 수 있도록 한다.</li>
+                <li>곱하기 연산에서는 2개의 피연산자가 모두 숫자여야 하고, 나누기는 오른쪽 피연산자가 0이 아닌 숫자여야 한다.</li>
+            </ul>
+            <h3>nav 요소의 너비를 전체 너비에서 80px만큼 뺀 값으로 설정</h3>
+            <p class="example">nav { <br>&nbsp;&nbsp;width: calc(100% - 80px);<br>}</p>
+        </div>
+        <div class="contents">
+            <h2>3) 최소, 최대값을 적용하는 min(), max() 함수</h2>
+            <hr>
+            <ul>
+                <li>min() 함수는 괄호 안에 나열된 값 중에서 가장 작은 값을 반환한다.</li>
+                <li>max() 함수는 괄호 안에 나열된 값 중에서 가장 큰 값을 반환한다.</li>
+            </ul>
+            <h3>.heading 요소의 너비를 100%와 700px 중 작은 값으로 적용한다.</h3>
+            <p class="example">.heading { <br>&nbsp;&nbsp;width: min(100%, 700px);<br>}</p>
+            <h3>.heading h1 요소의 폰트 크기를 3vw, 2em 중 큰 값으로 적용한다.</h3>
+            <p class="example">.heading h1 { <br>&nbsp;&nbsp;font-size: max(3vw, 2em);<br>}</p>
+        </div>
+        <div class="contents">
+            <h2>4) 값의 범위를 제한하는 clamp() 함수</h2>
+            <hr>
+            <ul>
+                <li>clamp(최소값, 최적값, 최대값)</li>
+            </ul>
+            <h3>.heading h1 요소의 폰트 크기를 2vw로 지정한다. 최소 1rem보다 작을 수 없고 최대 2rem 보다 커질 수 없다.</h3>
+            <p class="example">.heading h1 { <br>&nbsp;&nbsp;font-size: clamp(1rem, 2vw, 2rem);<br>}</p>
+        </div>
+        <div class="contents">
+            <h2>5) 다양한 시각 효과를 추가하는 filter 속성과 함수</h2>
+            <hr>
+            <ul>
+                <li>filter: 함수</li>
+                <li>필터 함수를 2개 이상 사용할 때는 공백으로 구분한다.</li>
+                <li>filter: blur(radius)
+                    <ul>
+                        <li>blur(8px); /* blur with 8px radius */</li>
+                        <li>blur(1.17rem); /* blur with 1.17rem radius */</li>
+                        <li>
+                            <p class="example">.blur { filter: blur(5px); }</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    filter: brightness(amount)
+                    <ul>
+                        <li>amount는 숫자나 %로 입력한다.</li>
+                        <li>brightness(1); /* Brightness of input is not chagned */</li>
+                        <li>brightness(0); /* Brightness is reduced to zero, so input turns black */</li>
+                        <li>brightness(1.5); /* 1.5배 밝아진다. 150%로 입력해도 된다. */</li>
+                        <li>
+                            <p class="example">.brightness { filter: brightness(80%); }</p>
+                        </li>
+                    </ul>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <h3>filter: blur(radius)</h3>
+            <p class="example">blur(8px); /* blur with 8px radius */</p>
+            <p class="example">blur(1.17rem); /* blur with 1.17rem radius */</p>
+        </div>
+        <div class="filter_sample">
+            <div class="card">
+                <p>원본</p>
+                <img src="./image/cat.jpg" alt="고양이">
+            </div>
+            <div class="card">
+                <p>filter: blur(5px)</p>
+                <img src="./image/cat.jpg" alt="고양이" class="blur">
+            </div>
+            <div class="card">
+                <p>filter: brightness(50%)</p>
+                <img src="./image/cat.jpg" alt="고양이" class="brightness">
+            </div>
+            <div class="card">
+                <p>filter: contrast(200%)</p>
+                <img src="./image/cat.jpg" alt="고양이" class="contrast">
+            </div>
+            <div class="card">
+                <p>filter: drop-shadow(5px 5px 5px #333)</p>
+                <img src="./image/cat.jpg" alt="고양이" class="drop_shadow">
+            </div>
+            <div class="card">
+                <p>filter: grayscale(80%)</p>
+                <img src="./image/cat.jpg" alt="고양이" class="grayscale">
+            </div>
+            <div class="card">
+                <p>filter: invert(100%)</p>
+                <img src="./image/cat.jpg" alt="고양이" class="invert">
+            </div>
+            <div class="card">
+                <p>filter: sepia(50%)</p>
+                <img src="./image/cat.jpg" alt="고양이" class="sepia">
+            </div>
+            <div class="card">
+                <p>filter: opacity(30%)</p>
+                <img src="./image/cat.jpg" alt="고양이" class="opacity">
+            </div>
+            <div class="card">
+                <p>filter: hue_rorate(90deg)</p>
+                <img src="./image/cat.jpg" alt="고양이" class="hue_rorate">
+            </div>
+            <div class="card">
+                <p>filter: saturate(200%)</p>
+                <img src="./image/cat.jpg" alt="고양이" class="saturate">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+:root {
+    /* CSS 변수 */
+    --bg-color: #444;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+.example {
+    background-color: var(--bg-color);
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.contents li>ul {
+    list-style-type: none;
+}
+
+.filter_sample {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 270px;
+    flex-shrink: 0;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.card {
+    width: 270px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.card>p {
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+.brightness {
+    filter: brightness(50%);
+}
+
+.contrast {
+    filter: contrast(200%);
+}
+
+.drop_shadow {
+    filter: drop-shadow(5px 5px 5px #333);
+}
+
+.grayscale {filter:grayscale(80%);}
+.invert {filter:invert(100%);}
+.sepia {filter:sepia(50%);}
+.opacity {filter:opacity(30%);}
+.hue_rorate {filter:hue-rotate(90deg);}
+.saturate {filter:saturate(200%);}

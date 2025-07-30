@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo class</title>
+    <style>
+        .container {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .navi {
+            width: 100%;
+            height: 60px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .navi ul {
+            list-style: none;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+
+        .navi ul li {
+            float: left;
+            width: 150px;
+            padding: 10px;
+        }
+
+        .navi a:link,
+        .navi a:visited {
+            display: block;
+            font-size: 14px;
+            color: #000;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .navi a:hover,
+        .navi a:focus {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .navi a:active {
+            background-color: #f00;
+        }
+
+        .navi2 {
+            width: 10em;
+            height: 5ex;
+            background-image: linear-gradient(135deg, #f34079, 40%, #fc894d);
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+        }
+
+        .navi2:active {
+            box-shadow: 2px 2px 5px #fc894d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navi">
+            <ul>
+                <li><a href="#">이용 안내</a></li>
+                <li><a href="#">객실 소개</a></li>
+                <li><a href="#">예약방법 및 요금</a></li>
+                <li><a href="#">예약하기</a></li>
+            </ul>
+            <button class="navi2">Subscribe</button>
+            <div class="color_desc">
+                <h2>Colors</h2>
+                <p>The format of an RGB value in hexadecimal notation is a '#' immediately followed by either three or
+                    six
+                    hexadecimal
+                    characters. The three-digit RGB notation (#rgb) is converted into six-digit form (#rrggbb) by
+                    replicating digits, not by
+                    adding zeros. For example, #fb0 expands to #ffbb00. This ensures that white (#ffffff) can be
+                    specified
+                    with the short
+                    notation (#fff) and removes any dependencies on the color depth of the display.</p>
+            </div>
+    </div>
+</body>
+
+</html>
